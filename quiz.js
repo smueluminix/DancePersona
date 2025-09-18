@@ -266,10 +266,11 @@ function renderSlot() {
   // Description screen (narrative with Next button)
   if (slot.type === "description") {
     if (slot.button) {
-      const btn = document.createElement('button');
-      btn.textContent = slot.button;
-      btn.onclick = () => { currentSlot++; renderSlot(); };
-      container.appendChild(btn);
+        const btn = document.createElement('button');
+        btn.textContent = slot.button;
+        btn.className = 'next-btn';
+        btn.onclick = () => { currentSlot++; renderSlot(); };
+        container.appendChild(btn);
     }
     return;
   }
