@@ -79,10 +79,13 @@ button:hover, button:focus {
   display: block;
   width: 100%;
   max-width: 400px;
+  min-width: 180px;
+  min-height: 2.7em;
   margin: 0.7em auto;
   white-space: normal;
   word-break: break-word;
   box-sizing: border-box;
+  text-align: center;
 }
 
 .slot-image {
@@ -105,9 +108,11 @@ button:hover, button:focus {
     font-size: 1.07rem;
   }
   button, .answer-btn {
-    font-size: 0.97rem;
-    padding: 0.7em 0.7em;
-    max-width: 98vw;
+     font-size: 0.97rem;
+     padding: 0.7em 0.7em;
+     max-width: 98vw;
+     min-width: 140px;
+     min-height: 2.5em;
   }
   .next-btn {
     min-width: 140px;
