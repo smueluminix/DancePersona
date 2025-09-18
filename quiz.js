@@ -404,15 +404,14 @@ function showResults() {
         quizCompletedLogged = true;
       }
       // Add 'Your Dance Persona is...' line
-      const personaLine = document.createElement('div');
-      personaLine.textContent = 'Your Dance Persona is...';
-      personaLine.style.fontWeight = '700';
-      personaLine.style.fontSize = '2.0rem';
-      personaLine.style.textAlign = 'center';
-      personaLine.style.margin = '0.3em 0 0.7em 0';
-      personaLine.style.margin = '0.6em 0 0.7em 0';
-      personaLine.style.color = '#6d2d7e';
-      container.appendChild(personaLine);
+    const personaLine = document.createElement('div');
+    personaLine.textContent = 'Your Dance Persona is...';
+    personaLine.style.fontWeight = '700';
+    personaLine.style.fontSize = '1.3rem'; // smaller
+    personaLine.style.textAlign = 'center';
+    personaLine.style.margin = '0.6em 0 0.7em 0';
+    personaLine.style.color = '#6d2d7e';
+    container.appendChild(personaLine);
 
       const img = document.createElement('img');
       img.src = winner.image;
@@ -421,39 +420,42 @@ function showResults() {
       container.appendChild(img);
 
       // Instruction text below image
-      const saveText = document.createElement('div');
-      saveText.innerHTML = "<i>Right click or hold the image to save!</i>";
-      saveText.style.fontSize = '1.3rem';
-      saveText.style.margin = '0.1em auto 1.5em auto';
-      saveText.style.maxWidth = '90%';
-      saveText.style.color = '#6d2d7e';
-      saveText.style.fontWeight = '500';
-      saveText.style.textAlign = 'center';
-      container.appendChild(saveText);
+    const saveText = document.createElement('div');
+    saveText.innerHTML = "<i>Right click or hold the image to save!</i>";
+    saveText.style.fontSize = '1.07rem'; // smaller
+    saveText.style.margin = '0.1em auto 1.5em auto';
+    saveText.style.maxWidth = '90%';
+    saveText.style.color = '#6d2d7e';
+    saveText.style.fontWeight = '500';
+    saveText.style.textAlign = 'center';
+    container.appendChild(saveText);
     }
 
   // Runners-up display
 
 
   // View All 8 Personas button
-  const viewAllBtn = document.createElement('button');
-  viewAllBtn.textContent = 'View all 8 Personas here!';
-  viewAllBtn.style.margin = '0.5em auto 0.5em auto';
-  viewAllBtn.style.display = 'block';
-  viewAllBtn.onclick = showAllPersonas;
-  viewAllBtn.onclick = function() {
-    console.log('[GA4] view_all_personas_clicked');
-    if (typeof gtag === 'function') {
-      gtag('event', 'view_all_personas_clicked');
-    }
-    showAllPersonas();
-  };
-  container.appendChild(viewAllBtn);
+    const viewAllBtn = document.createElement('button');
+    viewAllBtn.textContent = 'View all 8 Personas here!';
+    viewAllBtn.style.margin = '0.7em auto 0.7em auto';
+    viewAllBtn.style.display = 'block';
+    viewAllBtn.style.fontSize = '1.25rem';
+    viewAllBtn.style.padding = '1.1em 2.5em';
+    viewAllBtn.onclick = function() {
+      console.log('[GA4] view_all_personas_clicked');
+      if (typeof gtag === 'function') {
+        gtag('event', 'view_all_personas_clicked');
+      }
+      showAllPersonas();
+    };
+    container.appendChild(viewAllBtn);
 
   // Restart button
-  const restartBtn = document.createElement('button');
-  restartBtn.textContent = "Restart Quiz";
-  restartBtn.style.margin = '0.5em auto 0.5em auto';
+    const restartBtn = document.createElement('button');
+    restartBtn.textContent = "Restart Quiz";
+    restartBtn.style.margin = '0.7em auto 0.7em auto';
+    restartBtn.style.fontSize = '1.25rem';
+    restartBtn.style.padding = '1.1em 2.5em';
     restartBtn.onclick = () => {
       console.log('[GA4] restart_quiz_clicked');
       if (typeof gtag === 'function') {
@@ -464,22 +466,24 @@ function showResults() {
       quizCompletedLogged = false; // Reset flag on restart
       renderSlot();
     };
-  container.appendChild(restartBtn);
+    container.appendChild(restartBtn);
 
   // Instagram page button (now last)
-  const instaBtn = document.createElement('button');
-  instaBtn.textContent = 'Check us out on Instagram!';
-  instaBtn.style.display = 'block';
-  instaBtn.style.margin = '0.5em auto 0.5em auto';
-  instaBtn.style.textAlign = 'center';
-  instaBtn.onclick = () => {
-    console.log('[GA4] instagram_clicked');
-    if (typeof gtag === 'function') {
-      gtag('event', 'instagram_clicked');
-    }
-    window.open('https://www.instagram.com/eluminix/', '_blank', 'noopener');
-  };
-  container.appendChild(instaBtn);
+    const instaBtn = document.createElement('button');
+    instaBtn.textContent = 'Check us out on Instagram!';
+    instaBtn.style.display = 'block';
+    instaBtn.style.margin = '0.7em auto 0.7em auto';
+    instaBtn.style.textAlign = 'center';
+    instaBtn.style.fontSize = '1.25rem';
+    instaBtn.style.padding = '1.1em 2.5em';
+    instaBtn.onclick = () => {
+      console.log('[GA4] instagram_clicked');
+      if (typeof gtag === 'function') {
+        gtag('event', 'instagram_clicked');
+      }
+      window.open('https://www.instagram.com/eluminix/', '_blank', 'noopener');
+    };
+    container.appendChild(instaBtn);
 
 // Show all 8 persona report cards
 function showAllPersonas() {
