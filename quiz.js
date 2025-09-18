@@ -228,6 +228,9 @@ Grandpa Blob beams with joy. \n\n “You’ve saved Blob Land,” he proclaims, 
 let currentSlot = 0;
 let selectedAnswers = []; // Stores {slot: slotIndex, trait: trait} for each question slot
 
+// Prevent duplicate quiz_completed events
+let quizCompletedLogged = false;
+
 function renderSlot() {
   const slot = quizSlots[currentSlot];
   const container = document.getElementById('quiz-container');
@@ -388,43 +391,45 @@ function showResults() {
   container.appendChild(h3InstaTag);
 
   // Winner image
-  if (winner.image) {
-    // GA4 event: quiz_completed
-    console.log('[GA4] quiz_completed', { persona: winner.name });
-    if (typeof gtag === 'function') {
-      gtag('event', 'quiz_completed', {
-        persona: winner.name
-      });
+    if (winner.image) {
+      // Only log quiz_completed event the first time results are shown
+      if (!quizCompletedLogged) {
+        console.log('[GA4] quiz_completed', { persona: winner.name });
+        if (typeof gtag === 'function') {
+          gtag('event', 'quiz_completed', {
+            persona: winner.name
+          });
+        }
+        quizCompletedLogged = true;
+      }
+      // Add 'Your Dance Persona is...' line
+      const personaLine = document.createElement('div');
+      personaLine.textContent = 'Your Dance Persona is...';
+      personaLine.style.fontWeight = '700';
+      personaLine.style.fontSize = '2.0rem';
+      personaLine.style.textAlign = 'center';
+      personaLine.style.margin = '0.3em 0 0.7em 0';
+      personaLine.style.margin = '0.6em 0 0.7em 0';
+      personaLine.style.color = '#6d2d7e';
+      container.appendChild(personaLine);
+
+      const img = document.createElement('img');
+      img.src = winner.image;
+      img.alt = winner.name;
+      img.className = "slot-image";
+      container.appendChild(img);
+
+      // Instruction text below image
+      const saveText = document.createElement('div');
+      saveText.innerHTML = "<i>Right click or hold the image to save!</i>";
+      saveText.style.fontSize = '1.3rem';
+      saveText.style.margin = '0.1em auto 1.5em auto';
+      saveText.style.maxWidth = '90%';
+      saveText.style.color = '#6d2d7e';
+      saveText.style.fontWeight = '500';
+      saveText.style.textAlign = 'center';
+      container.appendChild(saveText);
     }
-  // Add 'Your Dance Persona is...' line
-  const personaLine = document.createElement('div');
-  personaLine.textContent = 'Your Dance Persona is...';
-  personaLine.style.fontWeight = '700';
-  personaLine.style.fontSize = '2.0rem';
-  personaLine.style.textAlign = 'center';
-  personaLine.style.margin = '0.3em 0 0.7em 0';
-  personaLine.style.margin = '0.6em 0 0.7em 0';
-  personaLine.style.color = '#6d2d7e';
-  container.appendChild(personaLine);
-
-    const img = document.createElement('img');
-    img.src = winner.image;
-    img.alt = winner.name;
-    img.className = "slot-image";
-    container.appendChild(img);
-
-    // Instruction text below image
-    const saveText = document.createElement('div');
-    saveText.innerHTML = "<i>Right click or hold the image to save!</i>";
-    saveText.style.fontSize = '1.3rem';
-    saveText.style.margin = '0.1em auto 1.5em auto';
-    saveText.style.maxWidth = '90%';
-    saveText.style.color = '#6d2d7e';
-    saveText.style.fontWeight = '500';
-    saveText.style.textAlign = 'center';
-    container.appendChild(saveText);
-
-  }
 
   // Runners-up display
 
@@ -448,15 +453,16 @@ function showResults() {
   const restartBtn = document.createElement('button');
   restartBtn.textContent = "Restart Quiz";
   restartBtn.style.margin = '0.5em auto 0.5em auto';
-  restartBtn.onclick = () => {
-    console.log('[GA4] restart_quiz_clicked');
-    if (typeof gtag === 'function') {
-      gtag('event', 'restart_quiz_clicked');
-    }
-    currentSlot = 0;
-    selectedAnswers = [];
-    renderSlot();
-  };
+    restartBtn.onclick = () => {
+      console.log('[GA4] restart_quiz_clicked');
+      if (typeof gtag === 'function') {
+        gtag('event', 'restart_quiz_clicked');
+      }
+      currentSlot = 0;
+      selectedAnswers = [];
+      quizCompletedLogged = false; // Reset flag on restart
+      renderSlot();
+    };
   container.appendChild(restartBtn);
 
   // Instagram page button (now last)
