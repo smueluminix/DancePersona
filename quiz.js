@@ -437,10 +437,11 @@ function showResults() {
   // View All 8 Personas button
     const viewAllBtn = document.createElement('button');
     viewAllBtn.textContent = 'View all 8 Personas here!';
-    viewAllBtn.style.margin = '0.7em auto 0.7em auto';
+    viewAllBtn.style.margin = '0.6em auto 0.6em auto';
     viewAllBtn.style.display = 'block';
-    viewAllBtn.style.fontSize = '1.25rem';
-    viewAllBtn.style.padding = '1.1em 2.5em';
+    viewAllBtn.style.fontSize = '1.08rem';
+    viewAllBtn.style.padding = '0.55em 1.1em';
+    viewAllBtn.style.whiteSpace = 'nowrap';
     viewAllBtn.onclick = function() {
       console.log('[GA4] view_all_personas_clicked');
       if (typeof gtag === 'function') {
@@ -453,9 +454,10 @@ function showResults() {
   // Restart button
     const restartBtn = document.createElement('button');
     restartBtn.textContent = "Restart Quiz";
-    restartBtn.style.margin = '0.7em auto 0.7em auto';
-    restartBtn.style.fontSize = '1.25rem';
-    restartBtn.style.padding = '1.1em 2.5em';
+    restartBtn.style.margin = '0.6em auto 0.6em auto';
+    restartBtn.style.fontSize = '1.08rem';
+    restartBtn.style.padding = '0.55em 1.1em';
+    restartBtn.style.whiteSpace = 'nowrap';
     restartBtn.onclick = () => {
       console.log('[GA4] restart_quiz_clicked');
       if (typeof gtag === 'function') {
@@ -472,10 +474,11 @@ function showResults() {
     const instaBtn = document.createElement('button');
     instaBtn.textContent = 'Check us out on Instagram!';
     instaBtn.style.display = 'block';
-    instaBtn.style.margin = '0.7em auto 0.7em auto';
+    instaBtn.style.margin = '0.6em auto 0.6em auto';
     instaBtn.style.textAlign = 'center';
-    instaBtn.style.fontSize = '1.25rem';
-    instaBtn.style.padding = '1.1em 2.5em';
+    instaBtn.style.fontSize = '1.08rem';
+    instaBtn.style.padding = '0.55em 1.1em';
+    instaBtn.style.whiteSpace = 'nowrap';
     instaBtn.onclick = () => {
       console.log('[GA4] instagram_clicked');
       if (typeof gtag === 'function') {
