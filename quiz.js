@@ -187,9 +187,9 @@ After what feels like forever, you reach a fork in the road. Billy frowns – he
 Grandpa Blob beams with joy. \n\n “You’ve saved Blob Land,” he proclaims, “and before you return home, I want you to take one thing with you.”
 \n\n <b>What do you choose?</b>`,
     answers: [
-      { text: "A map of Blob Land. Something to spark inspiration for your future adventures!", trait: "Creative" },
-      { text: "The now worn-out torch. A reminder of your good times with Billy!", trait: "Social" },
-      { text: "A shiny Blob Land disco ball. To spark some fun in future dance practices!", trait: "Energetic" },
+      { text: "A map of Blob Land, charting out its vast land. Something to bring inspiration for your future adventures!", trait: "Creative" },
+      { text: "The torch from your journey, now worn-out but filled with memories. A reminder of your good times with Billy!", trait: "Social" },
+      { text: "A shiny Blob Land disco ball, endlessly emanating some fire beats. To spark some fun in future dance practices!", trait: "Energetic" },
       { text: "Anything they’re willing to give. You're not picky.", trait: "Chill" },
 
     ],
@@ -202,7 +202,7 @@ Grandpa Blob beams with joy. \n\n “You’ve saved Blob Land,” he proclaims, 
 \n\n In the blink of an eye, you’re back on Earth! The golden floating headphones have vanished, leaving you to gather your thoughts and process everything that just happened.
 \n\n <b>What’s your first reaction to being home?</b>`,
     answers: [
-      { text: "You call everyone you know to tell them the wildest story ever, reenacting every moment!", trait: "Spotlight" },
+      { text: "You want to recount your adventure to everyone, complete with big gestures and sound effects!", trait: "Spotlight" },
       { text: "You reflect on this surreal experience, thoughtfully digesting and learning from it!", trait: "Meticulous" },
       { text: "\"So I went through all of that... and I still can’t turn into a Blob? Boooo!\"", trait: "Funny" },
       { text: "\"It’s time for more adventures. Gotta hunt down more of those floating objects!\"", trait: "Wildcard" }
@@ -235,6 +235,31 @@ function renderSlot() {
   const slot = quizSlots[currentSlot];
   const container = document.getElementById('quiz-container');
   container.innerHTML = ""; // Clear previous content
+
+  // Show progress bar for question slots only
+  const totalQuestions = quizSlots.filter(s => s.type === 'question').length;
+  const currentQuestionIndex = quizSlots.slice(0, currentSlot + 1).filter(s => s.type === 'question').length;
+  if (slot.type === 'question') {
+     const progressBarWrapper = document.createElement('div');
+     progressBarWrapper.className = 'progress-bar-wrapper';
+
+     const progressBar = document.createElement('div');
+     progressBar.className = 'progress-bar';
+
+     const progressFill = document.createElement('div');
+     progressFill.className = 'progress-bar-fill';
+     progressFill.style.width = Math.round((currentQuestionIndex / totalQuestions) * 100) + '%';
+     progressBar.appendChild(progressFill);
+     progressBarWrapper.appendChild(progressBar);
+
+     // Progress text
+     const progressText = document.createElement('div');
+     progressText.className = 'progress-bar-text';
+     progressText.textContent = `Question ${currentQuestionIndex} of ${totalQuestions}`;
+     progressBarWrapper.appendChild(progressText);
+
+     container.appendChild(progressBarWrapper);
+  }
 
   // Display slot image if available
   if (slot.image) {
