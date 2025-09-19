@@ -15,14 +15,14 @@ const personas = [
 // ---- TRAITS TO PERSONA WEIGHTS ----
 const traitToPersonaWeights = {
   // Order: Visionary, Socialite, Vibester, Sparkplug, Class Clown, Hustler, Showstopper, Free Spirit
-  Creative:    [0.55, 0,    0,    0,    0,    0,    0.3, 0.15],
-  Social:      [0,    0.55, 0.3, 0.15,  0,    0,    0,    0],
-  Chill:       [0,    0.15,  0.55, 0,    0.3, 0,    0,    0],
-  Energetic:   [0,    0.3, 0,    0.55, 0,    0.15,  0,    0],
-  Funny:       [0,    0,    0.15,  0,    0.55, 0,    0,    0.3],
-  Meticulous:  [0.3, 0,    0,    0,    0,    0.55, 0.15,  0],
-  Spotlight:   [0.15,  0,    0,    0,    0,    0.3, 0.55, 0],
-  Wildcard:    [0,    0,    0,    0.3, 0.15,  0,    0,    0.55]
+  Creative:    [0.58, 0,    0,    0,    0,    0,    0.27, 0.15],
+  Social:      [0,    0.58, 0.27, 0.15,  0,    0,    0,    0],
+  Chill:       [0,    0.15,  0.58, 0,    0.27, 0,    0,    0],
+  Energetic:   [0,    0.27, 0,    0.58, 0,    0.15,  0,    0],
+  Funny:       [0,    0,    0.15,  0,    0.58, 0,    0,    0.27],
+  Meticulous:  [0.27, 0,    0,    0,    0,    0.58, 0.15,  0],
+  Spotlight:   [0.15,  0,    0,    0,    0,    0.27, 0.58, 0],
+  Wildcard:    [0,    0,    0,    0.27, 0.15,  0,    0,    0.58]
 };
 
 // ---- QUIZ SLOTS: QUESTIONS, DESCRIPTIONS, ETC. ----
@@ -84,7 +84,7 @@ But as you turn the corner, you freeze. Right in front of you hover a pair of fl
     answers: [
       { text: "You eagerly introduce yourself to Grandpa Blob, your excitement shining through.", trait: "Energetic" },
       { text: "You decide to go by Blobby now. Might as well have some fun while you’re here!", trait: "Funny" },
-      { text: "You step forward confidently, charismatically introducing yourself as a human.", trait: "Spotlight" },
+      { text: "You step forward confidently, charismatically introducing yourself to the crowd as a human.", trait: "Spotlight" },
       { text: "You share tales of Earth, hoping to discuss deeper ideas about how your worlds differ.", trait: "Creative" }
     ],
     image: "images/6.png"
@@ -98,7 +98,7 @@ But as you turn the corner, you freeze. Right in front of you hover a pair of fl
     answers: [
       { text: "“Sure, I guess.”", trait: "Chill" },
       { text: "“Hmm… I’ll need a few more details first. How exactly will we solve this?”", trait: "Meticulous" },
-      { text: "“I’ll listen for now... But no promises on what I'll do next!”", trait: "Wildcard" },
+      { text: "“I’ll listen for now... But no promises on what I'll do after.”", trait: "Wildcard" },
       { text: "“As long as I'm not alone on the journey, I'm in!”", trait: "Social" }
     ],
     image: "images/7.png"
@@ -154,7 +154,7 @@ After what feels like forever, you reach a fork in the road. Billy frowns – he
       { text: "“This is your stage, your moment. Relish it, and shine like the star you are!”", trait: "Spotlight" },
       { text: "“Remember the people you’re sharing the stage with – your friends are the heart of any performance!”", trait: "Social" },
       { text: "“You have so much creativity in you. Give yourself chances to express your ideas!”", trait: "Creative" },
-      { text: "“Don't be afraid to be 100% yourself. Have fun on stage, even if you're not the cleanest!”", trait: "Wildcard" }
+      { text: "“Don't take things too seriously. Have fun on stage, even if you're not the cleanest!”", trait: "Wildcard" }
     ],
     image: "images/12.png"
   },
@@ -188,8 +188,8 @@ Grandpa Blob beams with joy. \n\n “You’ve saved Blob Land,” he proclaims, 
 \n\n <b>What do you choose?</b>`,
     answers: [
       { text: "A map of Blob Land, charting out its vast land. Something to bring inspiration for your future adventures!", trait: "Creative" },
-      { text: "The torch from your journey, now worn-out but filled with memories. A reminder of your good times with Billy!", trait: "Social" },
-      { text: "A shiny Blob Land disco ball, endlessly emanating some fire beats. To spark some fun in future dance practices!", trait: "Energetic" },
+      { text: "The torch from your journey, now a worn-out stick but filled with memories. A reminder of your good times with Billy!", trait: "Social" },
+      { text: "A shiny Blob Land disco ball, endlessly playing some fire beats. To spark some fun in future dance practices!", trait: "Energetic" },
       { text: "Anything they’re willing to give. You're not picky.", trait: "Chill" },
 
     ],
@@ -202,7 +202,7 @@ Grandpa Blob beams with joy. \n\n “You’ve saved Blob Land,” he proclaims, 
 \n\n In the blink of an eye, you’re back on Earth! The golden floating headphones have vanished, leaving you to gather your thoughts and process everything that just happened.
 \n\n <b>What’s your first reaction to being home?</b>`,
     answers: [
-      { text: "You want to recount your adventure to everyone, complete with big gestures and sound effects!", trait: "Spotlight" },
+      { text: "You want to recount your adventure to everyone, as dramatically as possible!", trait: "Spotlight" },
       { text: "You reflect on this surreal experience, thoughtfully digesting and learning from it!", trait: "Meticulous" },
       { text: "\"So I went through all of that... and I still can’t turn into a Blob? Boooo!\"", trait: "Funny" },
       { text: "\"It’s time for more adventures. Gotta hunt down more of those floating objects!\"", trait: "Wildcard" }
