@@ -41,7 +41,7 @@ const quizSlots = [
 But as you turn the corner, you freeze. Right in front of you hover a pair of floating headphones, shimmering in brilliant gold.
 \n\n <b>What do you do?</b>`,
     answers: [
-      { text: "You start reciting every physics concept you know, trying to make sense of it.", trait: "Meticulous" },
+      { text: "You cautiously observe the pair of headphones, trying to make sense of it.", trait: "Meticulous" },
       { text: "Wow, what's this?! You whip out your phone and start snapping pictures excitedly!", trait: "Energetic" },
       { text: "“Huh, that's pretty cool, I guess,” you think, as you stroll past them.", trait: "Chill" },
       { text: "No one’s in sight, right...? Well, finders’ keepers!", trait: "Wildcard" }
@@ -83,7 +83,7 @@ But as you turn the corner, you freeze. Right in front of you hover a pair of fl
 \n\n <b>“Tell me, outsider… who are you?”</b>`,
     answers: [
       { text: "You eagerly introduce yourself to Grandpa Blob, your excitement shining through.", trait: "Energetic" },
-      { text: "You decide to go by Blobby now. Might as well have some fun while you’re here!", trait: "Funny" },
+      { text: "You decide to go by a fake name. Might as well have some fun while you’re here!", trait: "Funny" },
       { text: "You step forward confidently, charismatically introducing yourself to the crowd as a human.", trait: "Spotlight" },
       { text: "You share tales of Earth, hoping to discuss deeper ideas about how your worlds differ.", trait: "Creative" }
     ],
@@ -98,7 +98,7 @@ But as you turn the corner, you freeze. Right in front of you hover a pair of fl
     answers: [
       { text: "“Sure, I guess.”", trait: "Chill" },
       { text: "“Hmm… I’ll need a few more details first. How exactly will we solve this?”", trait: "Meticulous" },
-      { text: "“I’ll listen for now... But no promises on what I'll do after.”", trait: "Wildcard" },
+      { text: "“I’ll listen for now, but no promises on what I'll do after!”", trait: "Wildcard" },
       { text: "“As long as I'm not alone on the journey, I'm in!”", trait: "Social" }
     ],
     image: "images/7.png"
@@ -154,7 +154,7 @@ After what feels like forever, you reach a fork in the road. Billy frowns – he
       { text: "“This is your stage, your moment. Relish it, and shine like the star you are!”", trait: "Spotlight" },
       { text: "“Remember the people you’re sharing the stage with – your friends are the heart of any performance!”", trait: "Social" },
       { text: "“You have so much creativity in you. Give yourself chances to express your ideas!”", trait: "Creative" },
-      { text: "“Don't take things too seriously. Have fun on stage, even if you're not the cleanest!”", trait: "Wildcard" }
+      { text: "“Feel the music and just have fun on stage, even if you're not the cleanest!”", trait: "Wildcard" }
     ],
     image: "images/12.png"
   },
