@@ -41,7 +41,7 @@ const quizSlots = [
 But as you turn the corner, you freeze. Right in front of you hover a pair of floating headphones, shimmering in brilliant gold.
 \n\n <b>What do you do?</b>`,
     answers: [
-      { text: "You cautiously observe the pair of headphones, trying to make sense of it.", trait: "Meticulous" },
+      { text: "You start recounting every physics concept you know, trying to make sense of it.", trait: "Meticulous" },
       { text: "Wow, what's this?! You whip out your phone and start snapping pictures excitedly!", trait: "Energetic" },
       { text: "“Huh, that's pretty cool, I guess,” you think, as you stroll past them.", trait: "Chill" },
       { text: "No one’s in sight, right...? Well, finders’ keepers!", trait: "Wildcard" }
@@ -58,7 +58,7 @@ But as you turn the corner, you freeze. Right in front of you hover a pair of fl
   // 4: Q2
   {
     type: "question",
-    text: `With a soft plop, you land in a whole new dimension – Blob Land! Here, music and dance clearly rule supreme. \n\n In the distance, you spot adorable mini Blobs bouncing on a dance floor, grooving happily to the rhythm.
+    text: `With a soft plop, you land in a whole new dimension – Blob Land! Here, music and dance clearly rule supreme. You already love it here! \n\n In the distance, you spot adorable mini Blobs bouncing on a dance floor, grooving happily to the rhythm.
 \n\n <b>What’s your first move?</b>`,
     answers: [
       { text: "You think outside the box, conjuring up ideas and possibilities for what you could do here.", trait: "Creative" },
@@ -82,7 +82,7 @@ But as you turn the corner, you freeze. Right in front of you hover a pair of fl
 “It is no coincidence,” he rumbles, “that our world falls into darkness the very moment a stranger appears.” He steps closer as the other Blobs gather around.
 \n\n <b>“Tell me, outsider… who are you?”</b>`,
     answers: [
-      { text: "You eagerly introduce yourself to Grandpa Blob, your excitement shining through.", trait: "Energetic" },
+      { text: "You eagerly introduce yourself to Grandpa Blob, your excitement clear as day.", trait: "Energetic" },
       { text: "You decide to go by a fake name. Might as well have some fun while you’re here!", trait: "Funny" },
       { text: "You step forward confidently, charismatically introducing yourself to the crowd as a human.", trait: "Spotlight" },
       { text: "You share tales of Earth, hoping to discuss deeper ideas about how your worlds differ.", trait: "Creative" }
@@ -189,7 +189,7 @@ Grandpa Blob beams with joy. \n\n “You’ve saved Blob Land,” he proclaims, 
     answers: [
       { text: "A map of Blob Land, charting out its vast land. Something to bring inspiration for your future adventures!", trait: "Creative" },
       { text: "The torch from your journey, now a worn-out stick but filled with memories. A reminder of your good times with Billy!", trait: "Social" },
-      { text: "A shiny Blob Land disco ball, endlessly playing some fire beats. To spark some fun in future dance practices!", trait: "Energetic" },
+      { text: "A shiny disco ball, unique to Blob Land. To spark some fun with friends in future dance trainings!", trait: "Energetic" },
       { text: "Anything they’re willing to give. You're not picky.", trait: "Chill" },
 
     ],
